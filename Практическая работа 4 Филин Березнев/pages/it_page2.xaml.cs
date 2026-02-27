@@ -20,11 +20,52 @@ namespace Практическая_работа_4_Филин_Березнев.pa
     /// </summary>
     public partial class it_page2 : Page
     {
+        List<TextBox> textBoxes;
+        int selected_func = 1;
         public it_page2()
         {
             InitializeComponent();
+            textBoxes = new List<TextBox> { x_znach, i_znach, otvet };
         }
 
-       
+        private void otchistit_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (TextBox tb in textBoxes)
+            {
+                tb.Text = "";
+            }
+        }
+
+        private void vichislit_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                int x = int.Parse(x_znach.Text);
+                int i = int.Parse(i_znach.Text);
+                
+                otvet.Text = Formula.second(x, i, selected_func).ToString();
+            }
+            catch
+            {
+                MessageBox.Show("У тебя была одна задача ввести целое число в каждое поле и ты ее провалил");
+            }
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButton rb = sender as RadioButton;
+            switch (rb.Content)
+            {
+                case "sh(x)":
+                    selected_func = 1;
+                    break;
+                case "x^2":
+                    selected_func = 2;
+                    break;
+                case "e^x":
+                    selected_func = 3;
+                    break;
+            }
+        }
     }
 }

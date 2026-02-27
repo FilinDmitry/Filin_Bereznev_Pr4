@@ -27,16 +27,16 @@
         <Label Grid.Row="2" Content="i" Width="60" FontSize="20"/>
         <Label Grid.Row="4" Content="Ответ" Width="60" FontSize="20" />
 
-        <Button x:Name="vichislit" Grid.Row="3" Grid.Column="2" Content="Вычислить" Margin="10,0,0,0" Width="175" Height="30" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
-        <Button x:Name="otchistit" Grid.Row="3" Grid.Column="2" Content="Отчистить" Margin="10,0,0,0" Width="175" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button x:Name="vichislit" Grid.Row="3" Grid.Column="2" Content="Вычислить" Margin="10,0,0,0" Width="175" Height="30" HorizontalAlignment="Left" VerticalAlignment="Bottom" ToolTip="Вычислить значение функции" Click="vichislit_Click"/>
+        <Button x:Name="otchistit" Grid.Row="3" Grid.Column="2" Content="Отчистить" Margin="10,0,0,0" Width="175" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" ToolTip="Очистить все поля" Click="otchistit_Click"/>
 
-        <TextBox x:Name="x_znach" Grid.Row="1" Grid.Column="1" FontSize="20"/>
-        <TextBox x:Name="i_znach" Grid.Row="2" Grid.Column="1" FontSize="20"/>
-        <TextBox x:Name="otvet" Grid.Row="4" Grid.Column="1" FontSize="20"/>
+        <TextBox x:Name="x_znach" Grid.Row="1" Grid.Column="1" FontSize="20" ToolTip="Введи целочисленное значение x"/>
+        <TextBox x:Name="i_znach" Grid.Row="2" Grid.Column="1" FontSize="20" ToolTip="Введи целочисленное значение i"/>
+        <TextBox x:Name="otvet" Grid.Row="4" Grid.Column="1" FontSize="20" IsEnabled="False"/>
         <StackPanel Grid.Column="1" Grid.Row="3">
-            <RadioButton  Grid.Column="1" Content="sh(x)" FontSize="18"  GroupName="formul"/>
-            <RadioButton  Grid.Column="1" Content="x^2" FontSize="18" GroupName="formul"/>
-            <RadioButton  Grid.Column="1" Content="e^x" FontSize="18" GroupName="formul" />
+            <RadioButton IsChecked="True"  Grid.Column="1" Content="sh(x)" FontSize="18"  GroupName="formul" ToolTip="Выбор функции" Checked="RadioButton_Checked"/>
+            <RadioButton  Grid.Column="1" Content="x^2" FontSize="18" GroupName="formul" ToolTip="Выбор функции" Checked="RadioButton_Checked"/>
+            <RadioButton  Grid.Column="1" Content="e^x" FontSize="18" GroupName="formul" ToolTip="Выбор функции" Checked="RadioButton_Checked"/>
         </StackPanel>
 
 
