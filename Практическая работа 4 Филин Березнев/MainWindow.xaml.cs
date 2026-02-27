@@ -24,5 +24,13 @@ namespace Практическая_работа_4_Филин_Березнев
         {
             InitializeComponent();
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MessageBoxResult dialogResult = MessageBox.Show("Вы точнор хотите закрыть окно приложения?", "Выход из приложения", MessageBoxButton.YesNo);
+            if (dialogResult == MessageBoxResult.No)
+            { e.Cancel = true; }
+            
+        }
     }
 }
