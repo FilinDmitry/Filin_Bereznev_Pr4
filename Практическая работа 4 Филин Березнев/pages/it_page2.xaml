@@ -9,6 +9,36 @@
       Title="it_page2">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+        <Image Source="/png/zadanie_2.png" Grid.ColumnSpan="3" Margin="10,0,10,0"/>
+
+        <Label Grid.Row="1" Content="x" Width="60" FontSize="20"/>
+        <Label Grid.Row="2" Content="i" Width="60" FontSize="20"/>
+        <Label Grid.Row="4" Content="Ответ" Width="60" FontSize="20" />
+
+        <Button x:Name="vichislit" Grid.Row="3" Grid.Column="2" Content="Вычислить" Margin="10,0,0,0" Width="175" Height="30" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+        <Button x:Name="otchistit" Grid.Row="3" Grid.Column="2" Content="Отчистить" Margin="10,0,0,0" Width="175" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+        <TextBox x:Name="x_znach" Grid.Row="1" Grid.Column="1" FontSize="20"/>
+        <TextBox x:Name="i_znach" Grid.Row="2" Grid.Column="1" FontSize="20"/>
+        <TextBox x:Name="otvet" Grid.Row="4" Grid.Column="1" FontSize="20"/>
+        <StackPanel Grid.Column="1" Grid.Row="3">
+            <RadioButton  Grid.Column="1" Content="sh(x)" FontSize="18"  GroupName="formul"/>
+            <RadioButton  Grid.Column="1" Content="x^2" FontSize="18" GroupName="formul"/>
+            <RadioButton  Grid.Column="1" Content="e^x" FontSize="18" GroupName="formul" />
+        </StackPanel>
+
+
     </Grid>
 </Page>

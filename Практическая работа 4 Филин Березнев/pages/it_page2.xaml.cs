@@ -24,5 +24,7 @@ namespace Практическая_работа_4_Филин_Березнев.pa
         {
             InitializeComponent();
         }
+
+       
     }
 }
