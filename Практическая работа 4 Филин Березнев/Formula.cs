@@ -56,7 +56,7 @@ namespace Практическая_работа_4_Филин_Березнев
             else if (x < 0 && i % 2 == 0)
             {
                 return second_cond_2(fx, i);
-            }
+            } 
             else
             {
                 return second_cond_3(fx, i);
