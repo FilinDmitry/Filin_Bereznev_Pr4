@@ -19,7 +19,7 @@
             <Button Content="2-я страница" Width="150" Click="Button_Click"></Button>
             <Button Content="3-я страница" Width="150" Click="Button_Click"></Button>
         </StackPanel>
-        <Frame x:Name="MainFrame" Grid.Row="1"></Frame>
+        <Frame x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"></Frame>
         
 
     </Grid>

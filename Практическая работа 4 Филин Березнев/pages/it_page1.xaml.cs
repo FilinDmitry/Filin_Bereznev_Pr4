@@ -20,9 +20,35 @@ namespace Практическая_работа_4_Филин_Березнев.pa
     /// </summary>
     public partial class it_page1 : Page
     {
+        List<TextBox> textBoxes;
+
         public it_page1()
         {
             InitializeComponent();
+            textBoxes = new List<TextBox> { x_znach, y_znach, z_znach, otvet};
+        }
+
+        private void otchistit_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (TextBox tb in textBoxes)
+            {
+                tb.Text = "";
+            }
+        }
+
+        private void vichislit_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                int x = int.Parse(x_znach.Text);
+                int y = int.Parse(y_znach.Text);
+                int z = int.Parse(z_znach.Text);
+                otvet.Text = Formula.first(x, y, z).ToString();
+            }
+            catch 
+            {
+                MessageBox.Show("У тебя была одна задача ввести целое число в каждое поле и ты ее провалил");
+            }
         }
     }
 }

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Практическая_работа_4_Филин_Березнев.pages;
 
 namespace Практическая_работа_4_Филин_Березнев
 {
@@ -39,13 +40,13 @@ namespace Практическая_работа_4_Филин_Березнев
             switch (btn.Content)
             {
                 case "1-я страница":
-
+                    MainFrame.NavigationService.Navigate(new it_page1());
                     break;
                 case "2-я страница":
-
+                    MainFrame.NavigationService.Navigate(new it_page2());
                     break;
                 case "3-я страница":
-
+                    MainFrame.NavigationService.Navigate(new it_pages3());
                     break;
             }
         }
