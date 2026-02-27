@@ -24,15 +24,19 @@ public partial class it_pages3 : Page
         public it_pages3()
         {
             InitializeComponent();
-            ChartPayments.ChartAreas.Add(new ChartArea("main"));
+            
 
             
         }
 
-
-        private void UpdateChart(object sender, SelectionChangedEventArgs e)
+        private void vichislit_Click(object sender, RoutedEventArgs e)
         {
-           
+
+        }
+
+        private void otchistit_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
