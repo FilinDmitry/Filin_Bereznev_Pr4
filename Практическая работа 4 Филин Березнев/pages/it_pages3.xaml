@@ -33,18 +33,18 @@
         </WindowsFormsHost>
         <Image Source="/png/zadanie_3.png" Grid.ColumnSpan="3"/>
         <StackPanel Grid.Row="1">
-            <Label Content="x"  FontSize="15" Width="60" Height="30"   Margin="5,0,0,0" HorizontalAlignment="Left"/>
+            <!--<Label Content="x"  FontSize="15" Width="60" Height="30"   Margin="5,0,0,0" HorizontalAlignment="Left"/>-->
             <Label Content="b"  FontSize="15" Width="60" Height="30"   Margin="5,0,0,0" HorizontalAlignment="Left"/>
             <Label Content="x0"  FontSize="15" Width="60" Height="30"   Margin="5,0,0,0" HorizontalAlignment="Left"/>
             <Label Content="xk"  FontSize="15" Width="60" Height="30"   Margin="5,0,0,0" HorizontalAlignment="Left"/>
             <Label Content="dx"  FontSize="15" Width="60" Height="30"   Margin="5,0,0,0" HorizontalAlignment="Left" />
         </StackPanel>
         <StackPanel Grid.Row="1">
-            <TextBox x:Name="x_znach" FontSize="20" Width="80" Height="20" HorizontalAlignment="Right" Margin="0,5,5,0"/>
-            <TextBox x:Name="b_znach" FontSize="20" Width="80" Height="20" HorizontalAlignment="Right"  Margin="0,10,5,0"/>
-            <TextBox x:Name="x0_znach" FontSize="20" Width="80" Height="20" HorizontalAlignment="Right"  Margin="0,10,5,0"/>
-            <TextBox x:Name="xk_znacht" FontSize="20" Width="80" Height="20" HorizontalAlignment="Right"  Margin="0,10,5,0"/>
-            <TextBox x:Name="dx_znach" FontSize="20" Width="80" Height="20"   Margin="0,10,5,0" HorizontalAlignment="Right"/>
+            <!--<TextBox x:Name="x_znach" FontSize="20" Width="80" Height="20" HorizontalAlignment="Right" Margin="0,5,5,0"/>-->
+            <TextBox x:Name="b_znach" FontSize="14" Width="80" Height="20" HorizontalAlignment="Right"  Margin="0,5,5,0"/>
+            <TextBox x:Name="x0_znach" FontSize="14" Width="80" Height="20" HorizontalAlignment="Right"  Margin="0,10,5,0"/>
+            <TextBox x:Name="xk_znacht" FontSize="14" Width="80" Height="20" HorizontalAlignment="Right"  Margin="0,10,5,0"/>
+            <TextBox x:Name="dx_znach" FontSize="14" Width="80" Height="20"   Margin="0,10,5,0" HorizontalAlignment="Right"/>
         </StackPanel>
         <Label Content="Ответ" Grid.Row="2" FontSize="15" Width="60" Height="30"   Margin="5,0,0,0" HorizontalAlignment="Left"/>
         <TextBox x:Name="otvet" Grid.Row="2" Grid.RowSpan="2" FontSize="20" Width="80" Height="80"   Margin="0,5,5,0" HorizontalAlignment="Right" VerticalAlignment="Top"/>
