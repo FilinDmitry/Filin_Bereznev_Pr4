@@ -5,6 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Практическая_работа_4_Филин_Березнев"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Closing="Window_Closing">
-    <Grid/>
+        Title="MainWindow" Height="550" Width="800" Closing="Window_Closing">
+    
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="450"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button Content="1-я страница" Width="150" Click="Button_Click"></Button>
+            <Button Content="2-я страница" Width="150" Click="Button_Click"></Button>
+            <Button Content="3-я страница" Width="150" Click="Button_Click"></Button>
+        </StackPanel>
+        <Frame x:Name="MainFrame" Grid.Row="1"></Frame>
+        
+
+    </Grid>
 </Window>

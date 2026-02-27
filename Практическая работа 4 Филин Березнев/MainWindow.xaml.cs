@@ -32,5 +32,22 @@ namespace Практическая_работа_4_Филин_Березнев
             { e.Cancel = true; }
             
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            switch (btn.Content)
+            {
+                case "1-я страница":
+
+                    break;
+                case "2-я страница":
+
+                    break;
+                case "3-я страница":
+
+                    break;
+            }
+        }
     }
 }
