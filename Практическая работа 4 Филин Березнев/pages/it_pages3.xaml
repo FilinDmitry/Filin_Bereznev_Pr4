@@ -41,13 +41,13 @@
         </StackPanel>
         <StackPanel Grid.Row="1">
             <!--<TextBox x:Name="x_znach" FontSize="20" Width="80" Height="20" HorizontalAlignment="Right" Margin="0,5,5,0"/>-->
-            <TextBox x:Name="b_znach" FontSize="14" Width="80" Height="20" HorizontalAlignment="Right"  Margin="0,5,5,0"/>
-            <TextBox x:Name="x0_znach" FontSize="14" Width="80" Height="20" HorizontalAlignment="Right"  Margin="0,10,5,0"/>
-            <TextBox x:Name="xk_znacht" FontSize="14" Width="80" Height="20" HorizontalAlignment="Right"  Margin="0,10,5,0"/>
-            <TextBox x:Name="dx_znach" FontSize="14" Width="80" Height="20"   Margin="0,10,5,0" HorizontalAlignment="Right"/>
+            <TextBox x:Name="b_znach" ToolTip="Введите b" FontSize="14" Width="80" Height="20" HorizontalAlignment="Right"  Margin="0,5,5,0"/>
+            <TextBox x:Name="x0_znach" ToolTip="Введите x0"  FontSize="14" Width="80" Height="20" HorizontalAlignment="Right"  Margin="0,10,5,0"/>
+            <TextBox x:Name="xk_znacht" ToolTip="Введите xk"  FontSize="14" Width="80" Height="20" HorizontalAlignment="Right"  Margin="0,10,5,0"/>
+            <TextBox x:Name="dx_znach" ToolTip="Введите шаг графика"  FontSize="14" Width="80" Height="20"   Margin="0,10,5,0" HorizontalAlignment="Right"/>
         </StackPanel>
         <Label Content="Ответ" Grid.Row="2" FontSize="15" Width="60" Height="30"   Margin="5,0,0,0" HorizontalAlignment="Left"/>
-        <TextBox x:Name="otvet" Grid.Row="2" Grid.RowSpan="2" FontSize="20" Width="80" Height="80"   Margin="0,5,5,0" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        <TextBox x:Name="otvet" IsEnabled="False" Grid.Row="2" Grid.RowSpan="2" Width="80" Height="80"   Margin="0,5,5,0" HorizontalAlignment="Right" VerticalAlignment="Top"/>
         <Button x:Name="vichislit" Grid.Row="4" Grid.Column="0" Content="Вычислить" Margin="10,0,0,5" Width="75" Height="30" HorizontalAlignment="Left" VerticalAlignment="Bottom" ToolTip="Вычислить значение функции" Click="vichislit_Click"/>
         <Button x:Name="otchistit" Grid.Row="4" Grid.Column="0" Content="Отчистить" Margin="0,0,5,5" Width="75" Height="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" ToolTip="Очистить все поля" Click="otchistit_Click"/>
 

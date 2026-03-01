@@ -34,6 +34,8 @@ public partial class it_pages3 : Page
             ChartPayments.Series.Add(currentSeries);
             currentSeries.IsValueShownAsLabel = false;
             currentSeries.ChartType = SeriesChartType.Spline;
+            currentSeries.Color = System.Drawing.Color.Red;
+            currentSeries.BorderWidth = 8;
 
         }
 
@@ -67,40 +69,66 @@ public partial class it_pages3 : Page
                 return;
             }
 
+            
             try
             {
+                List<string> lst_y = new List<string>();
+                double y;
                 if (x0 > xk)
                 {
+                    if (x0 + dx < xk)
+                    {
+                        MessageBox.Show("Я запрещаю вам делать пустой график\n@Джейсон Стэйтем");
+                        return;
+                    }
                     while (x0 >= xk)
                     {
                         if (b != x0)
                         {
-                            currentSeries.Points.AddXY(x0, Formula.third_func(x0, b));
+                            y = Formula.third_func(x0, b);
+                            currentSeries.Points.AddXY(x0, y);
+                            lst_y.Add(y.ToString());
                         }
                         else
                         {
-                            currentSeries.Points.AddXY(x0 - 0.001, Formula.third_func(x0 - 0.001, b));
-                            currentSeries.Points.AddXY(x0 + 0.001, Formula.third_func(x0 + 0.001, b));
+                            y = Formula.third_func(x0 - 0.0001, b);
+                            currentSeries.Points.AddXY(x0 - 0.0001, y);
+                            lst_y.Add(y.ToString());
+                            y = Formula.third_func(x0 + 0.0001, b);
+                            currentSeries.Points.AddXY(x0 + 0.0001, y);
+                            lst_y.Add(y.ToString());
                         }
                             x0 += dx;
                     }
                 }
                 else
                 {
+                    if (x0 + dx > xk)
+                    {
+                        MessageBox.Show("Я запрещаю вам делать пустой график\n@Джейсон Стэйтем");
+                        return;
+                    }
                     while (x0 <= xk)
                     {
                         if (b != x0)
                         {
-                            currentSeries.Points.AddXY(x0, Formula.third_func(x0, b));
+                            y = Formula.third_func(x0, b);
+                            currentSeries.Points.AddXY(x0, y);
+                            lst_y.Add(y.ToString());
                         }
                         else
                         {
-                            currentSeries.Points.AddXY(x0 - 0.001, Formula.third_func(x0 - 0.001, b));
-                            currentSeries.Points.AddXY(x0 + 0.001, Formula.third_func(x0 + 0.001, b));
+                            y = Formula.third_func(x0 + 0.0001, b);
+                            currentSeries.Points.AddXY(x0 + 0.0001, y);
+                            lst_y.Add(y.ToString());
+                            y = Formula.third_func(x0 - 0.0001, b);
+                            currentSeries.Points.AddXY(x0 - 0.0001,  y);
+                            lst_y.Add(y.ToString());
                         }
                         x0 += dx;
                     }
                 }
+                otvet.Text = String.Join("\n", lst_y);
             }
             catch { MessageBox.Show("Что-то пошло не так в вычислениях"); }
 
@@ -114,10 +142,7 @@ public partial class it_pages3 : Page
             }
         }
 
-        private void UpdateChart(object sender, SelectionChangedEventArgs e)
-        {
-            
-        }
+        
     }
 }
 
