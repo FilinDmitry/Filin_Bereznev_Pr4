@@ -25,13 +25,13 @@ public partial class it_pages3 : Page
         {
             InitializeComponent();
             textBoxes = new List<TextBox> { b_znach, x0_znach, xk_znacht, dx_znach, otvet };
-            ChartPayments.ChartAreas.Add(new ChartArea("Main"));
+            ChartF.ChartAreas.Add(new ChartArea("Main"));
 
-            Series currentSeries = new Series("Платежи")
+            Series currentSeries = new Series("Функция")
             {
                 IsValueShownAsLabel = true
             };
-            ChartPayments.Series.Add(currentSeries);
+            ChartF.Series.Add(currentSeries);
             currentSeries.IsValueShownAsLabel = false;
             currentSeries.ChartType = SeriesChartType.Spline;
             currentSeries.Color = System.Drawing.Color.Red;
@@ -42,7 +42,7 @@ public partial class it_pages3 : Page
         private void vichislit_Click(object sender, RoutedEventArgs e)
         {
             
-            Series currentSeries = ChartPayments.Series.FirstOrDefault();
+            Series currentSeries = ChartF.Series.FirstOrDefault();
             currentSeries.Points.Clear();
             double b, dx, x0, xk;
             bool b_ = false, dx_ = false, x0_ = false, xk_ = false;
