@@ -43,6 +43,11 @@ namespace Практическая_работа_4_Филин_Березнев.pa
                 int x = int.Parse(x_znach.Text);
                 int y = int.Parse(y_znach.Text);
                 int z = int.Parse(z_znach.Text);
+                if (-1 == x * Math.Abs(y - Math.Tan(z)))
+                {
+                    MessageBox.Show("Произошло деление на 0, вселенная начинает схлопываться");
+                    return;
+                }
                 otvet.Text = Formula.first(x, y, z).ToString();
             }
             catch 
