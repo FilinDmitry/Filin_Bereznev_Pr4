@@ -9,6 +9,13 @@ namespace Практическая_работа_4_Филин_Березнев
 {
     public static class Formula
     {
+        /// <summary>
+        /// Этот метод рассчитывает значение 1-й функции
+        /// </summary>
+        /// <param name="x">Значение x</param>
+        /// <param name="y">Значение y</param>
+        /// <param name="z">Значение z</param>
+        /// <returns>Значение функции</returns>
         public static double first(double x, double y, double z)
         {
             double num_1 = (Math.Pow(x, y + 1) + Math.Pow(Math.E, y - 1))
@@ -26,6 +33,13 @@ namespace Практическая_работа_4_Филин_Березнев
             return Math.Round(result, 4);
         }
 
+        /// <summary>
+        /// Этот метод рассчитывает значение 2-й функции
+        /// </summary>
+        /// <param name="x">Значение x</param>
+        /// <param name="i">Значение i</param>
+        /// <param name="func">Код функции f(x)</param>
+        /// <returns>Значение функции</returns>
         public static double second(double x, double i, int func)
         {
             double fx;
@@ -73,7 +87,14 @@ namespace Практическая_работа_4_Филин_Березнев
         {
             return Math.Round(Math.Sqrt(Math.Abs(i * fx)), 4);
         }
-
+        /// <summary>
+        ///  рассчитывает значение 3-й функции
+        /// </summary>
+        /// <param name="b_znach">Значение b</param>
+        /// <param name="dx_znach">Значение dx</param>
+        /// <param name="x0_znach">Значение x0</param>
+        /// <param name="xk_znach">Значение  xk</param>
+        /// <returns>Значение функции</returns>
         public static double third_func(double x, double b)
         {
             return Math.Round(0.001 * Math.Pow(Math.Abs(x), 2.5) + Math.Log(Math.Abs(x - b)), 4);

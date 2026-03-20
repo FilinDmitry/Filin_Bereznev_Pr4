@@ -60,7 +60,13 @@ namespace Практическая_работа_4_Филин_Березнев.pa
                     break;
             }
         }
-
+        /// <summary>
+        /// Этот метод преобразует введеные данные на 2-й странице для их дальнейшего рассчета и в случае успеха записывает ответ в поле с ответом
+        /// </summary>
+        /// <param name="x_znach">Значение текста введеное в поле x</param>
+        /// <param name="i_znach">Значение текста введеное в поле i</param>
+        /// <param name="selected_func">Код выбранной функции, установленный с помощью метода RadioButton_Checked</param>
+        /// <returns>Код выполнения функции (если 0, то все успешно; если > 0 то код завершения функции)</returns>
         public int check_valid_data(string x_znach, string i_znach, int selected_func)
         {
             try

@@ -65,7 +65,14 @@ public partial class it_pages3 : Page
                 tb.Text = "";
             }
         }
-
+        /// <summary>
+        /// Этот метод преобразует введеные данные на 3-й странице для их дальнейшего рассчета и в случае успеха записывает ответ в поле с ответом и строит график
+        /// </summary>
+        /// <param name="b_znach">Значение текста введеное в поле b</param>
+        /// <param name="dx_znach">Значение текста введеное в поле dx</param>
+        /// <param name="x0_znach">Значение текста введеное в поле x0</param>
+        /// <param name="xk_znach">Значение текста введеное в поле xk</param>
+        /// <returns>Код выполнения функции (если 0, то все успешно; если > 0 то код завершения функции)</returns>
         public int check_valid_data(string b_znach, string dx_znach, string x0_znach, string xk_znach)
         {
             Series ourSeries = currentSeries;
