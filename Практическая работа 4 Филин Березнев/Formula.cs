@@ -45,7 +45,7 @@ namespace Практическая_работа_4_Филин_Березнев
                     return -1;
             }
 
-            if (x > 0 && i % 2 == 1)
+            if (x > 0 && Math.Abs(i) % 2 == 1)
             {
                 return second_cond_1(fx, i);
             }
@@ -61,7 +61,7 @@ namespace Практическая_работа_4_Филин_Березнев
 
         static double second_cond_1(double fx, double i)
         {
-            return Math.Round(i * Math.Sqrt(fx), 4);
+            return Math.Round(i * Math.Abs(Math.Sqrt(fx)), 4);
         }
 
         static double second_cond_2(double fx, double i)

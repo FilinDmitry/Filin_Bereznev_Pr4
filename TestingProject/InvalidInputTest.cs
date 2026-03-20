@@ -5,6 +5,9 @@ using Практическая_работа_4_Филин_Березнев.pages;
 
 namespace TestingProject
 {
+    /// <summary>
+    /// Класс тестирующий проверку валидности значений введеных на 1-й странице
+    /// </summary>
     [TestClass]
     public class InvalidInputTestPage1
     {
@@ -35,7 +38,9 @@ namespace TestingProject
             Assert.AreEqual(page.check_valid_data("1", "6", "3,4"), 0);
         }
     }
-
+    /// <summary>
+    /// Класс тестирующий проверку валидности значений введеных на 2-й странице
+    /// </summary>
     [TestClass]
     public class InvalidInputTestPage2
     {
@@ -61,7 +66,9 @@ namespace TestingProject
             Assert.AreEqual(page.check_valid_data("1", "6", 1), 0);
         }
     }
-
+    /// <summary>
+    /// Класс тестирующий проверку валидности значений введеных на 3-й странице
+    /// </summary>
     [TestClass]
     public class InvalidInputTestPage3
     {
