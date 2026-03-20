@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
@@ -21,16 +22,12 @@ namespace Практическая_работа_4_Филин_Березнев.pa
 public partial class it_pages3 : Page
     {
         List<TextBox> textBoxes;
+        Series currentSeries = new Series("Функция");
         public it_pages3()
         {
             InitializeComponent();
             textBoxes = new List<TextBox> { b_znach, x0_znach, xk_znacht, dx_znach, otvet };
             ChartF.ChartAreas.Add(new ChartArea("Main"));
-
-            Series currentSeries = new Series("Функция")
-            {
-                IsValueShownAsLabel = true
-            };
             ChartF.Series.Add(currentSeries);
             currentSeries.IsValueShownAsLabel = false;
             currentSeries.ChartType = SeriesChartType.Spline;
@@ -41,35 +38,58 @@ public partial class it_pages3 : Page
 
         private void vichislit_Click(object sender, RoutedEventArgs e)
         {
-            
-            Series currentSeries = ChartF.Series.FirstOrDefault();
+            switch(check_valid_data(b_znach.Text, dx_znach.Text, x0_znach.Text, xk_znacht.Text))
+            {
+                case 1:
+                    MessageBox.Show("Ты ошибся тестировщик, баг в другом замке \n\nP.S. Если что ввод дробного числа через запятую");
+                    break;
+                case 2:
+                    MessageBox.Show("атата, чо думал самый умный, dx = 0 низя");
+                    break;
+                case 3:
+                    MessageBox.Show("Ты хочешь войти в бесконечный цикл, а ещё чего? Ищи баги в другом месте");
+                    break;
+                case 4:
+                    MessageBox.Show("Я запрещаю вам делать пустой график\n@Джейсон Стэйтем");
+                    break;
+                case -1:
+                    MessageBox.Show("Что-то пошло не так в вычислениях");
+                    break;
+            }
+        }
+
+        private void otchistit_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (TextBox tb in textBoxes)
+            {
+                tb.Text = "";
+            }
+        }
+
+        public int check_valid_data(string b_znach, string dx_znach, string x0_znach, string xk_znach)
+        {
+            Series ourSeries = currentSeries;
             currentSeries.Points.Clear();
             double b, dx, x0, xk;
-            bool b_ = false, dx_ = false, x0_ = false, xk_ = false;
-            
-            b_ = double.TryParse(b_znach.Text, out b);
-            dx_ = double.TryParse(dx_znach.Text, out dx);
-            x0_ = double.TryParse(x0_znach.Text, out x0);
-            xk_ = double.TryParse(xk_znacht.Text, out xk);
+            bool b_, dx_, x0_, xk_;
+            b_ = double.TryParse(b_znach, out b);
+            dx_ = double.TryParse(dx_znach, out dx);
+            x0_ = double.TryParse(x0_znach, out x0);
+            xk_ = double.TryParse(xk_znach, out xk);
             if (!b_ || !dx_ || !x0_ || !xk_)
             {
-                MessageBox.Show("Ты ошибся тестировщик, баг в другом замке \n\nP.S. Если что ввод дробного числа через запятую");
-                return;
+                return 1;
             }
-                
             if (dx == 0)
             {
-                MessageBox.Show("атата, чо думал самый умный, dx = 0 низя");
-                return;
+                return 2;
             }
 
             if ((dx > 0 && x0 > xk) || (dx < 0 && x0 < xk))
             {
-                MessageBox.Show("Ты хочешь войти в бесконечный цикл, а ещё чего? Ищи баги в другом месте");
-                return;
+                return 3;
             }
 
-            
             try
             {
                 List<string> lst_y = new List<string>();
@@ -78,8 +98,7 @@ public partial class it_pages3 : Page
                 {
                     if (x0 + dx < xk)
                     {
-                        MessageBox.Show("Я запрещаю вам делать пустой график\n@Джейсон Стэйтем");
-                        return;
+                        return 4;
                     }
                     while (x0 >= xk)
                     {
@@ -91,22 +110,21 @@ public partial class it_pages3 : Page
                         }
                         else
                         {
-                            y = Formula.third_func(x0 - 0.0001, b);
-                            currentSeries.Points.AddXY(x0 - 0.0001, y);
-                            lst_y.Add(y.ToString());
                             y = Formula.third_func(x0 + 0.0001, b);
                             currentSeries.Points.AddXY(x0 + 0.0001, y);
                             lst_y.Add(y.ToString());
+                            y = Formula.third_func(x0 - 0.0001, b);
+                            currentSeries.Points.AddXY(x0 - 0.0001, y);
+                            lst_y.Add(y.ToString());
                         }
-                            x0 += dx;
+                        x0 += dx;
                     }
                 }
                 else
                 {
                     if (x0 + dx > xk)
                     {
-                        MessageBox.Show("Я запрещаю вам делать пустой график\n@Джейсон Стэйтем");
-                        return;
+                        return 4;
                     }
                     while (x0 <= xk)
                     {
@@ -122,27 +140,22 @@ public partial class it_pages3 : Page
                             currentSeries.Points.AddXY(x0 + 0.0001, y);
                             lst_y.Add(y.ToString());
                             y = Formula.third_func(x0 - 0.0001, b);
-                            currentSeries.Points.AddXY(x0 - 0.0001,  y);
+                            currentSeries.Points.AddXY(x0 - 0.0001, y);
                             lst_y.Add(y.ToString());
                         }
                         x0 += dx;
                     }
                 }
                 otvet.Text = String.Join("\n", lst_y);
+                return 0;
             }
-            catch { MessageBox.Show("Что-то пошло не так в вычислениях"); }
+            catch {
+                return -1;
+            }
 
         }
 
-        private void otchistit_Click(object sender, RoutedEventArgs e)
-        {
-            foreach (TextBox tb in textBoxes)
-            {
-                tb.Text = "";
-            }
-        }
 
-        
     }
 }
 

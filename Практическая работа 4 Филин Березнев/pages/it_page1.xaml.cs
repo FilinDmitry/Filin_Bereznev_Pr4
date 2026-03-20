@@ -38,22 +38,38 @@ namespace Практическая_работа_4_Филин_Березнев.pa
 
         private void vichislit_Click(object sender, RoutedEventArgs e)
         {
-            try
+            switch(check_valid_data(x_znach.Text, y_znach.Text, z_znach.Text))
             {
-                double x = double.Parse(x_znach.Text);
-                double y = double.Parse(y_znach.Text);
-                double z = double.Parse(z_znach.Text);
-                if (-1 == x * Math.Abs(y - Math.Tan(z)))
-                {
+                case 1:
                     MessageBox.Show("Произошло деление на 0, вселенная начинает схлопываться");
-                    return;
-                }
-                otvet.Text = Formula.first(x, y, z).ToString();
-            }
-            catch 
-            {
-                MessageBox.Show("У тебя была одна задача ввести целое число в каждое поле и ты ее провалил");
+                    break;
+                case 2:
+                    MessageBox.Show("У тебя была одна задача ввести число в каждое поле и ты ее провалил");
+                    break;
+                
             }
         }
+
+        public int check_valid_data(string x_znach, string y_znach, string z_znach)
+        {
+            try
+            {
+                double x = double.Parse(x_znach);
+                double y = double.Parse(y_znach);
+                double z = double.Parse(z_znach);
+                if (-1 == x * Math.Abs(y - Math.Tan(z)))
+                {
+                    return 1;
+                }
+                otvet.Text = Formula.first(x, y, z).ToString();
+                return 0;
+            }
+            catch
+            {
+                return 2;
+            }
+            
+        }
+
     }
 }

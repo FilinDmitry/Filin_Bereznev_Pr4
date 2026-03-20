@@ -7,12 +7,8 @@ using System.Windows;
 
 namespace Практическая_работа_4_Филин_Березнев
 {
-    static internal class Formula
+    public static class Formula
     {
-
-
-
-
         public static double first(double x, double y, double z)
         {
             double num_1 = (Math.Pow(x, y + 1) + Math.Pow(Math.E, y - 1))
@@ -46,7 +42,7 @@ namespace Практическая_работа_4_Филин_Березнев
                     break;
                 default:
                     MessageBox.Show("Ошибка в номере функции");
-                    return 0;
+                    return -1;
             }
 
             if (x > 0 && i % 2 == 1)
@@ -80,7 +76,7 @@ namespace Практическая_работа_4_Филин_Березнев
 
         public static double third_func(double x, double b)
         {
-            return 0.001 * Math.Pow(Math.Abs(x), 2.5) + Math.Log(Math.Abs(x - b));
+            return Math.Round(0.001 * Math.Pow(Math.Abs(x), 2.5) + Math.Log(Math.Abs(x - b)), 4);
         }
 
     }

@@ -31,9 +31,9 @@
         <Button x:Name="vichislit" Grid.Row="1" Grid.Column="2" Content="Вычислить" Margin="10,0,190,0" Click="vichislit_Click" ToolTip="Вычислить значение функции"/>
         <Button x:Name="otchistit" Grid.Row="4" Grid.Column="2" Content="Отчистить" Margin="10,0,190,0" Click="otchistit_Click" ToolTip="Отчистить все поля"/>
 
-        <TextBox x:Name="x_znach" Grid.Row="1" Grid.Column="1" FontSize="20" ToolTip="Введи целочисленное значение x"/>
-        <TextBox x:Name="y_znach" Grid.Row="2" Grid.Column="1" FontSize="20" ToolTip="Введи целочисленное значение y"/>
-        <TextBox x:Name="z_znach" Grid.Row="3" Grid.Column="1" FontSize="20" ToolTip="Введи целочисленное значение z"/>
+        <TextBox x:Name="x_znach" Grid.Row="1" Grid.Column="1" FontSize="20" ToolTip="Введи численное значение x"/>
+        <TextBox x:Name="y_znach" Grid.Row="2" Grid.Column="1" FontSize="20" ToolTip="Введи численное значение y"/>
+        <TextBox x:Name="z_znach" Grid.Row="3" Grid.Column="1" FontSize="20" ToolTip="Введи численное значение z"/>
         <TextBox x:Name="otvet" IsEnabled="False" Grid.Row="4" Grid.Column="1" FontSize="20"/>
 
     </Grid>

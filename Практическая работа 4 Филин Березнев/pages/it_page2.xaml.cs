@@ -38,14 +38,7 @@ namespace Практическая_работа_4_Филин_Березнев.pa
 
         private void vichislit_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                double x = double.Parse(x_znach.Text);
-                double i = double.Parse(i_znach.Text);
-                
-                otvet.Text = Formula.second(x, i, selected_func).ToString();
-            }
-            catch
+            if(check_valid_data(x_znach.Text, i_znach.Text, selected_func) == 1)
             {
                 MessageBox.Show("Чтобы понять что ты сделал не так, то прочитай всплывающие подсказки, а лучше документацию");
             }
@@ -65,6 +58,21 @@ namespace Практическая_работа_4_Филин_Березнев.pa
                 case "e^x":
                     selected_func = 3;
                     break;
+            }
+        }
+
+        public int check_valid_data(string x_znach, string i_znach, int selected_func)
+        {
+            try
+            {
+                double x = double.Parse(x_znach);
+                double i = double.Parse(i_znach);
+                otvet.Text = Formula.second(x, i, selected_func).ToString();
+                return 0;
+            }
+            catch
+            {
+                return 1;
             }
         }
     }
