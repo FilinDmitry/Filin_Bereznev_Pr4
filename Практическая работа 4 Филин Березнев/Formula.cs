@@ -13,7 +13,7 @@ namespace Практическая_работа_4_Филин_Березнев
 
 
 
-        public static double first(int x, int y, int z)
+        public static double first(double x, double y, double z)
         {
             double num_1 = (Math.Pow(x, y + 1) + Math.Pow(Math.E, y - 1))
                 /
@@ -30,7 +30,7 @@ namespace Практическая_работа_4_Филин_Березнев
             return Math.Round(result, 4);
         }
 
-        public static double second(int x, int i, int func)
+        public static double second(double x, double i, int func)
         {
             double fx;
             switch (func)
@@ -63,17 +63,17 @@ namespace Практическая_работа_4_Филин_Березнев
             }
         }
 
-        static double second_cond_1(double fx, int i)
+        static double second_cond_1(double fx, double i)
         {
             return Math.Round(i * Math.Sqrt(fx), 4);
         }
 
-        static double second_cond_2(double fx, int i)
+        static double second_cond_2(double fx, double i)
         {
             return Math.Round(i / 2 * Math.Sqrt(Math.Abs(fx)), 4);
         }
 
-        static double second_cond_3(double fx, int i)
+        static double second_cond_3(double fx, double i)
         {
             return Math.Round(Math.Sqrt(Math.Abs(i * fx)), 4);
         }

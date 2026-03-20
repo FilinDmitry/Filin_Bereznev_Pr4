@@ -40,9 +40,9 @@ namespace Практическая_работа_4_Филин_Березнев.pa
         {
             try
             {
-                int x = int.Parse(x_znach.Text);
-                int y = int.Parse(y_znach.Text);
-                int z = int.Parse(z_znach.Text);
+                double x = double.Parse(x_znach.Text);
+                double y = double.Parse(y_znach.Text);
+                double z = double.Parse(z_znach.Text);
                 if (-1 == x * Math.Abs(y - Math.Tan(z)))
                 {
                     MessageBox.Show("Произошло деление на 0, вселенная начинает схлопываться");

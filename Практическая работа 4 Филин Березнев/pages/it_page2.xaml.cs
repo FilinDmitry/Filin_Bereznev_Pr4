@@ -40,8 +40,8 @@ namespace Практическая_работа_4_Филин_Березнев.pa
         {
             try
             {
-                int x = int.Parse(x_znach.Text);
-                int i = int.Parse(i_znach.Text);
+                double x = double.Parse(x_znach.Text);
+                double i = double.Parse(i_znach.Text);
                 
                 otvet.Text = Formula.second(x, i, selected_func).ToString();
             }
